@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>芝麻开门--</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    } 
+    .main{
+        position: relative;
+        width: 340px;
+        height: 445px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border:2px solid rgba(71,51,40,0.55);
+        border-bottom: none;
+        box-shadow: 2px 0px 0px #E4D5D2,-2px 0px 0px #edafa4,0px -2px 0px #edafa4;
+        background: -webkit-linear-gradient(top, #d05835 3px, #d05835 5px, #d05835 8px, #c6502c 10px, #bf542a 20px, #a54f2c 25px, #c0673f 30px, #a25636 50px, #a86342 60px, #c46342 70px, #bc683c)
+    }   
+    .main:before{
+        content: '';
+        display: block;
+        width: 306px;
+        height: 427px;
+        border: 2px solid rgba(71,51,24,0.77);
+        border-bottom: none;
+        margin: 0 auto;
+        margin-top: 16px;
+        background-color: #fff;
+    }
+    .door-1{
+        position: absolute;
+        top: 10px;
+        left: -1px;
+        width: 19px;
+        height: 2px;
+        background-color: rgba(71,51,24,0.30);
+        transform:rotate(45deg);
+    }
+    .door-2{
+        position: absolute;
+        top: 10px;
+        right: -1px;
+        width: 19px;
+        height: 2px;
+        background-color: rgba(71,51,24,0.30);
+        transform:rotate(-45deg);
+    }
+    .door-left{}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="door-1"></div>
+        <div class="door-2"></div>
+        <div class="door"></div>
+        <div class="door-left"></div>
+        <div class="door-right"></div>        
+    </div>
+</body>
+</html>
