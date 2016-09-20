@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>动画栗子</title>
+    <style>
+    body{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+    }
+    .load-main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        height: 18px;
+        width: 350px;
+        background: repeating-linear-gradient(90deg,white,white 5%,transparent 5%,transparent 35%);
+        -webkit-animation:travel 1.2s infinite linear;
+    }
+    .load-main:before,.load-main:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -45px;
+        border-radius: 100%;
+        margin-top: -45px;
+        border: 45px solid yellow;
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+    }
+    .load-main:before{
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        z-index: 99;
+        -webkit-animation:chomp 0.35s infinite linear;
+    }
+    .load-main:after{
+        border-right-color: transparent;
+        border-top-color: transparent;
+        z-index: 99;
+        -webkit-animation:chompB 0.35s infinite linear;
+    }
+
+    @-webkit-keyframes travel{
+        from{
+            background-position: 0 0;
+        }
+        to{
+            background-position: -350px 0;
+        }
+    }
+
+    @-webkit-keyframes chomp{
+        0%{
+            transform:rotate(-45deg);
+        }
+        50%{
+            transform:rotate(-90deg);
+        }
+        100%{
+            transform:rotate(-45deg);
+        }
+    }
+    @keyframes chomp{
+        0%{
+            transform:rotate(-45deg);
+        }
+        50%{
+            transform:rotate(-90deg);
+        }
+        100%{
+            transform:rotate(-45deg);
+        }
+    }
+
+    @-webkit-keyframes chompB{
+        0%{
+            transform: rotate(-45deg);
+        }
+        50%{
+            transform:rotate(0deg);
+        }
+        100%{
+            transform:rotate(-45deg);
+        }
+
+    }
+    @keyframes chompB{
+        0%{
+            transform: rotate(-45deg);
+        }
+        50%{
+            transform:rotate(0deg);
+        }
+        100%{
+            transform:rotate(-45deg);
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <div class="load-main"></div>
+    <!-- <div class="text"></div> -->
+</body>
+</html>
