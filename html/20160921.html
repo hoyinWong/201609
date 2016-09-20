@@ -39,6 +39,7 @@
         content: '';
         display: block;
         height: 100%;
+        box-shadow: 4px 0 0 rgb(68, 65, 65) inset,-4px 0 0 rgb(68, 65, 65) inset;
     }
     .door-1{
         position: absolute;
@@ -61,20 +62,91 @@
     .door-left{
         position: absolute;
         top: 0;
-        left: 0;
-        width: 50%;
+        left: 3px;
+        width: 49%;
         height: 98%;
         border-right: 2px solid #d59d6a;
+        -webkit-transform-origin:0 0;
         background: -webkit-linear-gradient(left,#a85e39 5%, #a34f33 15%, #b05e38 35%, #a7573c 50%, #9d4833 70%, #af5437,rgba(152, 49, 15, 0.9) 80%);
     }
     .door-right{
         position: absolute;
         top: 0;
-        right: 0;
-        width: 50%;
+        right: 3px;
+        width: 48%;
         height: 98%;
         border-left: 2px solid #d59d6a;
+        -webkit-transform-origin:100% 0;
         background: -webkit-linear-gradient(right,#a85e39 5%, #a34f33 15%, #b05e38 35%, #a7573c 50%, #9d4833 70%, #af5437,rgba(152, 49, 15, 0.9) 80%);
+    }
+    .door{
+        background: -webkit-repeating-linear-gradient(left,black 7%,transparent 15%,transparent 80%,black);
+        position: relative;
+        top: -51%;
+        left: 41%;
+        z-index: 999;
+        width: 58px;
+        height: 13px;
+        border-radius: 100%;
+    }
+    .door:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: 11%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgba(242, 247, 250, 0.69);
+        z-index: 99;
+    }
+    .door:after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        right: 11%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgba(242, 247, 250, 0.69);
+        z-index: 99;
+    }
+    .txt{
+        position: absolute;
+        top: 41%;
+        left: 34%;
+        z-index: 999;
+        font-size: 28px;
+        color: red;
+        text-shadow: 2px 2px 8px #ff0;
+        display: none;
+    }
+    .box:hover .door-left{
+        -webkit-transform:rotateY(-90deg);
+        transition:transform 3s linear;
+    }
+    .box:hover .door-right{
+        -webkit-transform:rotateY(90deg);
+        transition:transform 3s linear;
+    }
+    .box:hover .door{
+        display: none;
+    }
+    .box:hover .txt{
+        animation:showTxt 3s linear;
+    }
+    @-webkit-keyframes showTxt{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+        }
     }
     </style>
 </head>
@@ -85,7 +157,8 @@
             <div class="door-2"></div>
             <div class="door"></div>
             <div class="door-left"></div>
-            <div class="door-right"></div>             
+            <div class="door-right"></div>    
+            <div class="txt">Welcome!</div>         
         </div>
     </div>
 </body>
