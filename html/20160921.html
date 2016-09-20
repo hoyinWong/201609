@@ -24,21 +24,26 @@
         box-shadow: 2px 0px 0px #E4D5D2,-2px 0px 0px #edafa4,0px -2px 0px #edafa4;
         background: -webkit-linear-gradient(top, #d05835 3px, #d05835 5px, #d05835 8px, #c6502c 10px, #bf542a 20px, #a54f2c 25px, #c0673f 30px, #a25636 50px, #a86342 60px, #c46342 70px, #bc683c)
     }   
-    .main:before{
-        content: '';
-        display: block;
+    .box{
+        position: relative;
         width: 306px;
         height: 427px;
-        border: 2px solid rgba(71,51,24,0.77);
+        border: 2px solid rgba(71,51,24,0.80);
         border-bottom: none;
         margin: 0 auto;
         margin-top: 16px;
         background-color: #fff;
+        box-shadow: 4px 0 0 #A85E39,0px -4px 0 rgba(171, 80, 52, 0.91),-4px 0 0 #A85E39
+    }
+    .box:before{
+        content: '';
+        display: block;
+        height: 100%;
     }
     .door-1{
         position: absolute;
-        top: 10px;
-        left: -1px;
+        top: -9px;
+        left: -18px;
         width: 19px;
         height: 2px;
         background-color: rgba(71,51,24,0.30);
@@ -46,23 +51,42 @@
     }
     .door-2{
         position: absolute;
-        top: 10px;
-        right: -1px;
+        top: -9px;
+        right: -18px;
         width: 19px;
         height: 2px;
         background-color: rgba(71,51,24,0.30);
         transform:rotate(-45deg);
     }
-    .door-left{}
+    .door-left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 98%;
+        border-right: 2px solid #d59d6a;
+        background: -webkit-linear-gradient(left,#a85e39 5%, #a34f33 15%, #b05e38 35%, #a7573c 50%, #9d4833 70%, #af5437,rgba(152, 49, 15, 0.9) 80%);
+    }
+    .door-right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 98%;
+        border-left: 2px solid #d59d6a;
+        background: -webkit-linear-gradient(right,#a85e39 5%, #a34f33 15%, #b05e38 35%, #a7573c 50%, #9d4833 70%, #af5437,rgba(152, 49, 15, 0.9) 80%);
+    }
     </style>
 </head>
 <body>
     <div class="main">
-        <div class="door-1"></div>
-        <div class="door-2"></div>
-        <div class="door"></div>
-        <div class="door-left"></div>
-        <div class="door-right"></div>        
+        <div class="box">
+            <div class="door-1"></div>
+            <div class="door-2"></div>
+            <div class="door"></div>
+            <div class="door-left"></div>
+            <div class="door-right"></div>             
+        </div>
     </div>
 </body>
 </html>
